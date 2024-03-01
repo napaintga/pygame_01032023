@@ -1,0 +1,15 @@
+    if not jumping:
+        if keys[pygame.K_SPACE]:
+            jumping = True
+
+    else:
+        if jump_count >= -jump_height:
+            neg = 1
+            if jump_count < 0:
+                neg = -1
+            m_y -= (jump_count ** 2) * 0.5 * neg
+            jump_count -= 1
+        else:
+            jumping = False
+            jump_count = jump_height
+            
